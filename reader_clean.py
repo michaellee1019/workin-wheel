@@ -46,14 +46,14 @@ async def connect(location_secret: str, robot_address: str):
         # not available in SDK yet (pending release)
         # timeout=5
     )
-    for x in range(50):
-        try:
-            print("connection try", x)
-            return await RobotClient.at_address(robot_address, opts)
-        except Exception as e:
-            print("Failed to connect", e)
-            pass
-    raise Exception("Too many connection attempts to robot failed. Please sure that robot is on and connected to wifi.")
+    # for x in range(5):
+    #     try:
+    #         print("connection try", x)
+    return await RobotClient.at_address(robot_address, opts)
+    #     except Exception as e:
+    #         print("Failed to connect", e)
+    #         pass
+    # raise Exception("Too many connection attempts to robot failed. Please sure that robot is on and connected to wifi.")
 
 def get_next_wheel_position() -> int:
     """Shows basic usage of the Google Calendar API.
